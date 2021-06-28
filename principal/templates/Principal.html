@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://api.spaceflightnewsapi.net/v3/articles">
+ 
+  <title>principal</title>
+
+</head>
+<body>
+    
+<!--BARRA DE COLOR NEGRO CON LETRAS BLANCAS-->
+    <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top">
+        <!--PONER EL LOGO EN EL MENU       navbar navbar-expand-lg navbar-light fixed-top py-3-->
+        <div class="container"> 
+            <a class="navbar-brand" href="">
+                <img src="{% static 'img/Logo.jpg' %}" alt="Logo" style="width: 50px;">
+            </a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="Principal.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Deportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Entretenimiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Salud</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Redes Sociales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="Búsqueda" placeholder="Búsqueda" aria-label="Búsqueda">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
+            </form> 
+
+            <a href="InicioSesion.html"><button type="button" class="btn btn-light">Iniciar sesión</button></a>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="container">
+            <div class="row">
+                <h1>Clima</h1>
+            </div>
+            <div class="row">
+                <button id="boton1"></button>
+            </div>
+            <div class="row">
+                <span id="longitud"></span>
+                <span id="latitud"></span>
+            </div>
+            
+            <div class="container" >
+                <div class="row" style="text-align: center;">
+                    <table class="table" id="tabla1" bordercolor="#000000" style="background-color: #dddddd;">
+                        <tr>
+                            <th>Clima</th>
+                            <th>Estado</th>
+                            <th>Temperatura Máxima</th>
+                            <th>Temperatura Minima</th>
+                            <th>Longitud</th>
+                            <th>Latitud</th>
+                        </tr>
+          
+                    </table>
+                </div>
+            </div> 
+
+          </div>
+          
+          
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        
+          <!-- Indicadores -->
+          <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ul>
+          
+          <!-- Imagenes -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="GreysAnatomy.html">
+                    <img src="{% static 'img/greys.jpg' %}" alt="Greys Anatomy" width="1100" height="500">
+                </a>
+                <div class="carousel-caption">
+                  <h3>Grey's Anatomy</h3>
+                  <p>Serie</p>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+              <a href="futbol.html">
+                <img src="{% static 'img/real.jpg' %}" alt="Grammy" width="1100" height="500">
+              </a>
+              <div class="carousel-caption">
+                <h3>Champions League</h3>
+                <p>Futbol</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <a href="Peliculas.html">
+                <img src="{% static 'img/EntradaPelicula.png' %}" alt="Marvel y Terror" width="1100" height="500">
+              </a>
+              <div class="carousel-caption">
+                <h3>Terror y Ciencia Ficción</h3>
+                <p>Cine</p>
+              </div>   
+            </div>
+            <div class="carousel-item">
+                <a href="corona.html">
+                  <img src="{% static 'img/redes1.jpg' %}" alt="Grammy" width="1100" height="500">
+                </a>
+                <div class="carousel-caption">
+                  <h3>Falsa Información</h3>
+                  <p>Redes Sociales</p>
+                </div>
+            </div>
+        </div>
+          
+          <!-- Controles derecha e izquierda -->
+          <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+        
+    </div>
+    <p> </p>
+  
+    <h1 class="text-center"> Noticias </h1>
+    <p> </p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="GreysAnatomy.html">
+                    <h3>Serie: Grey's Anatomy</h3>
+                    <img src="imagen/GreysAnatomySe.jpg" class="rounded" width="90%">
+                </a>
+                <p>
+                    Descubre todos los detalles de la serie que la esta rompiendo.
+                </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="privacidad.html">
+              <h3>Que subes a redes sociales</h3>
+              <img src="img/tendencias-redes-sociales-2021-1280x720.jpg" class="rounded" width="100%">
+            </a>
+            <p>
+                Una problemática que será abordada a continuación por el profesional 
+                y que plantea de qué forma se puede solucionar, de modo que este caso 
+                hipotético mencionado no te ocurra a futuro y en otro escenario de la vida.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="Musica.html">
+              <h3>Grammy 2021</h3>
+              <img src="imagen/DuaLipa.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Estos son los ganadores que hicieron historia en los 
+                premios Grammy Awards 2021 en su 63ª entrega.
+            </p>
+        </div>
+
+        <div>
+            <a href="Peliculas.html">
+                <h2 class="text-center">Conoce las mejores peliculas de Terror.</h2>
+                <img src="imagen/TerrorEntrada.jpg"  class="mx-auto d-block" width="1100" alt="">
+            </a>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="camila.html">
+              <h3>Camila Gallardo</h3>
+              <img src="Img/camila.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Otra vez en el blanco de las críticas: 
+                Camila Gallardo indigna a las redes sociales 
+                por asistir a fiesta masiva en Miami.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="mountain.html">
+              <h3>Mountain Bike</h3>
+              <img src="Img/mountain-biking-95032_1280.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Martín Vidaurre tiene 20 años y cinco meses y es el más joven entre los 
+                15 nacionales que ya tienen los pasajes asegurados a los Juegos Olímpicos 
+                de Tokio. Hoy lunes 27 de julio, el ciclista debería haber participado del 
+                cross country en Tokio 2020, un debut que deberá esperar 12 meses.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="Coronavirus.html">
+              <h3>Coronavirus</h3>
+              <img src="imagen/EnfeCoronavirus.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Ultimas Informaciones sobre el Coronavirus en Chile.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="AlcoholDrogas.html">
+              <h3>Consumo alcohol y drogas</h3>
+              <img src="imagen/AlcoholEntrada.png" class="rounded" width="90%">
+            </a>
+            <p>
+                Impacto por el consumo de estas sustancias y como afecta en las salud.
+            </p>
+        </div>
+        
+        <div class="col-sm-4">
+            <a href="esqui.html">
+              <h3>Esqui</h3>
+              <img src="Img/esqui3.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                El esquí es un deporte de montaña que consiste en
+                el deslizamiento por la nieve. Existen lugares con glaciares como Tignes en Francia, 
+                donde la temporada anual para la práctica de este deporte empieza allá por finales
+                del mes de octubre.
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <a href="Mental.html">
+              <h3>Cuida tu Salud Mental</h3>
+              <img src="imagen/SaludMental.jpg" class="rounded" width="90%">
+            </a>
+            <p>
+                Recomendaciones para mantener una buena salud mental.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h2>Más Noticias</h2>
+        </div>
+        <div class="row">
+            <button id="boton2" class="btn btn-primary">Ver Noticias Espaciales</button>
+        </div>
+        <p> </p>
+        <div>
+            <table class="table" id="tablaNoticias">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titúlo</th>
+                        <th>Descripción</th>
+                        <th>Sitio</th>
+                        <th>Imagen</th>
+                        <th>Url</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="container mt-5">
+        <div class="text-center mb-3">
+        </div>
+        <div class="row g-2">
+            <div class="col-md-4">
+                <div class="card"> <img src="https://i.imgur.com/xuGJbnU.png" width="40">
+                    <h5>Atención</h5>
+                    <p>Lunes a Sabados de 09:00 a 22:00 hrs</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card"> <img src="https://i.imgur.com/TNKflal.png" width="40">
+                    <h5>Email</h5>
+                    <p>caosnews_contacto@mail.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card"> <img src="https://i.imgur.com/pZLFSO3.png" width="40">
+                    <h5>Comunicate con nosotros</h5>
+                    <p>9-12345678</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </div>
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#boton1").show(
+            function()
+            {
+                getLocation();
+            }
+        );
+
+    });
+
+    function getLocation(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }else{
+                x.innerHTML = "Geolocalizacion no es soportada por este navegador";
+            }
+        }
+
+    function showPosition(position) {
+  
+  $("#longitud").html("Longitud: " + position.coords.longitude).hide();
+  $("#latitud").html("Latitud: " + position.coords.latitude).hide();
+  $.get("http://api.openweathermap.org/data/2.5/weather?units=metric&lat=" + position.coords.latitude + 
+  "&lon=" + position.coords.longitude + "&appid=896407728aaff9977aa6af2cdff722fd",
+
+          function(data){
+              $("#tabla1").append("<tr><td>" + "<img src='https://assets.msn.com/bundles/v1/weather/latest/MostlySunnyDay.svg'>" + data.main.temp
+                +"</td><td>" + data.weather[0].description + "</td><td>" + data.main.temp_max + "<br>°C" + "</td><td>" + data.main.temp_min+ "<br>°C" +
+                "</td><td>" + data.coord.lon + "</td><td>" + data.coord.lat +"</td></tr>");
+            }); 
+}
+            ///https://assets.msn.com/bundles/v1/weather/latest/MostlySunnyDay.svg  SOL
+            //https://assets.msn.com/bundles/v1/weather/latest/SunnyDayV3.svg SOL Y NUBE
+</script>
+
+<script>
+        $("#boton2").click(function(){
+            $.get("https://api.spaceflightnewsapi.net/v3/articles",
+            function(data){
+                $.each(data, function(i,item){
+                    $("#tablaNoticias").append(
+                    "<tr>" +
+                    "<td>" + data[i].id + "</td>" +
+                    "<td>" + data[i].title + "</td>" +
+                    "<td>" + data[i].summary + "</td>" +
+                    "<td>" + data[i].newsSite + "</td>" +
+                    "<td>" + data[i].imageUrl + "</td>" +
+                    "<td>" + data[i].url + "</td>" +
+                    "<td>" + data[i].publishedAt + "</td>" +
+                    "</tr>"); 
+                })         
+                });
+            });
+</script>
+
+</html>
