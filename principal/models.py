@@ -10,6 +10,7 @@ class Categoria(models.Model):
 class Noticia(models.Model):
     idNoticia=models.IntegerField(primary_key=True)
     titulo=models.CharField(max_length=100, verbose_name='Titulo')
-    descripcion=models.CharField(max_length=300, verbose_name='Informacion')
+    encabezado=models.CharField(max_length=100, verbose_name='Encabezado')
+    descripcion=models.CharField(max_length=500, verbose_name='Contenido')
     categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
     
