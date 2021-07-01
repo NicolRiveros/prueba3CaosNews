@@ -25,30 +25,33 @@ def formNoticia(request):
 
 
 def guardarNoticia(request):
-    v_titulo=request.POST.get('titulo')
-    v_idNoticia=request.POST.get('idNoticia')
-    v_encabezado=request.POST.get('encabezado')
-    v_descripcion=request.POST.get('descripcion')
-    v_categoria=request.POST.get('categoria')
+    try:
+        v_titulo=request.POST.get('titulo')
+        v_idNoticia=request.POST.get('idNoticia')
+        v_encabezado=request.POST.get('encabezado')
+        v_descripcion=request.POST.get('descripcion')
+        v_categoria=request.POST.get('categoria')
 
-    #RESCATA EL OBJETO IMAGEN DEL FORMULARIO
-    v_imagen=request.FILES.get('imagen')
-    fs = FileSystemStorage()
-    file = fs.save(v_imagen.name, v_imagen)
-    #FILE ES EL NOMBRE DEL ARCHIVO
+        #RESCATA EL OBJETO IMAGEN DEL FORMULARIO
+        v_imagen=request.FILES.get('imagen')
+        fs = FileSystemStorage()
+        file = fs.save(v_imagen.name, v_imagen)
+        #FILE ES EL NOMBRE DEL ARCHIVO
 
-    categoria=Categoria.objects.get(idCategoria=v_categoria)
+        categoria=Categoria.objects.get(idCategoria=v_categoria)
 
-    nuevo=Noticia()
-    nuevo.titulo=v_titulo
-    nuevo.idNoticia=v_idNoticia
-    nuevo.encabezado=v_encabezado
-    nuevo.descripcion=v_descripcion
-    nuevo.categoria=categoria
-    nuevo.imagen=file
+        nuevo=Noticia()
+        nuevo.titulo=v_titulo
+        nuevo.idNoticia=v_idNoticia
+        nuevo.encabezado=v_encabezado
+        nuevo.descripcion=v_descripcion
+        nuevo.categoria=categoria
+        nuevo.imagen=file
 
-    Noticia.save(nuevo)
-    return redirect('/noticias')
+        Noticia.save(nuevo)
+        return redirect('/noticias')
+    except Exception as e:
+        return HttpResponse(e)
 
 def formCategoria(request):
     return render(request, 'formCategoria.html')
@@ -66,7 +69,7 @@ def guardarCategoria(request):
     categoria=Categoria.objects.all()
 
     context={'categoria': categoria}
-    return HttpResponse('Categoria Agregada:' + v_nombreCategoria)
+    return redirect('/noticias')
 
 def eliminarNoticia(request, v_idNoticia):
     noticia=Noticia.objects.get(idNoticia=v_idNoticia)
