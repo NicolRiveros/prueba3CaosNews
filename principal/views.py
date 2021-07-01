@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from .models import Noticia
 from .models import Categoria
 from django.core.files.storage import FileSystemStorage #PERMITE ACCEDER AL SISTEMA DE ARCHIVOS
+
 # Create your views here.
 
 def principal(request):
@@ -30,6 +31,12 @@ def guardarNoticia(request):
     v_descripcion=request.POST.get('descripcion')
     v_categoria=request.POST.get('categoria')
 
+    #RESCATA EL OBJETO IMAGEN DEL FORMULARIO
+    v_imagen=request.FILES.get('imagen')
+    fs = FileSystemStorage()
+    file = fs.save(v_imagen.name, v_imagen)
+    #FILE ES EL NOMBRE DEL ARCHIVO
+
     categoria=Categoria.objects.get(idCategoria=v_categoria)
 
     nuevo=Noticia()
@@ -37,8 +44,8 @@ def guardarNoticia(request):
     nuevo.idNoticia=v_idNoticia
     nuevo.encabezado=v_encabezado
     nuevo.descripcion=v_descripcion
-
     nuevo.categoria=categoria
+    nuevo.imagen=file
 
     Noticia.save(nuevo)
     return redirect('/noticias')

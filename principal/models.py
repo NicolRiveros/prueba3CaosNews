@@ -12,6 +12,6 @@ class Noticia(models.Model):
     titulo=models.CharField(max_length=100, verbose_name='Titulo')
     encabezado=models.CharField(max_length=100, verbose_name='Encabezado')
     descripcion=models.CharField(max_length=900, verbose_name='Contenido')
-
+    imagen=models.CharField(max_length=100, default='')
     categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
     

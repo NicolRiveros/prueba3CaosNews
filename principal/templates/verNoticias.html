@@ -33,7 +33,7 @@
 <body>
     <div class="container"> 
         <div class="row">
-            <table class="table" style="text-align: center;">
+            <table class="table">
                 <tr>
                     <th> <b>Id Noticia</b> </th>
                     <th> <b>Titulo</b> </th>
@@ -50,6 +50,7 @@
                         <td>{{n.encabezado}}</td>
                         <td>{{n.descripcion}}</td>
                         <td>{{n.categoria_id}}</td>
+                        <td><img src="media/{{ n.imagen }}" alt=""></td>
                         <td> <a href="eliminarN/{{n.idNoticia}}">Eliminar</a> </td>
                         <td> <a href="modificarN/{{n.idNoticia}}">Modificar</a> </td>
                     </tr>
