@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <style>
-        table {
-            font-family: sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            border: 1px solid black;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: float;
-            padding: 15px;
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
-
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,41 +49,28 @@
     <div class="container"> 
         <div class="row">
             <h1 style="text-align: center;">Noticias</h1>
-            <table class="table" style="text-align: center;">
-                
-                <tr>
-                    <th> <b>Id Noticia</b> </th>
-                    <th> <b>Titulo</b> </th>
-                    <th> <b>Encabezado</b> </th>
-                    <th> <b>Contenido</b> </th>
-                    <th colspan="2"> <b>Categoria</b> </th>
-                    <th colspan="2"> <b>Acciones</b> </th>
-                </tr>
-                {% for n in noticias %}<!-- ITERA LAS NOTICIAS -->
-                    <tr>
-                        <td>{{n.idNoticia}}</td>
-                        <td>{{n.titulo}}</td>
-                        <td>{{n.encabezado}}</td>
-                        <td>{{n.descripcion}}</td>
-                        <td>{{n.categoria_id}}</td>
-                        <td>{{n.categoria.nombreCategoria}}</td>
-                        <td> <a href="eliminarN/{{n.idNoticia}}">Eliminar</a> </td>
-                        <td> <a href="modificarN/{{n.idNoticia}}">Modificar</a> </td>
-                    </tr>
-                {% endfor %}
-            </table>
-
-            <table>
-                <tr>
-                    <th colspan="2"></th>
-                </tr>
+            <div class="container">
                 {% for n in noticias %}
-                    <tr>
-                        <td> <b>{{n.titulo}}</b></td>
-                        <td><img src="media/{{ n.imagen }}" alt=""></td>
-                    </tr>
+                    <h2> {{n.titulo}} </h2>
+                    <h4> {{n.encabezado}}</h4>
+                    <p>
+                        {{n.descripcion}}
+                    </p>
+                    <img src="media/{{ n.imagen }}" class="mx-auto d-block" width="400" height="400">
+                    <div class="row">
+                        <table class="table">
+                            <tr>
+                                <th><td colspan="2"> <b>Acciones</b> </td></th>
+                            </tr>
+                            <tr style="text-align: center;">
+                                <td> <a href="eliminarN/{{n.idNoticia}}">Eliminar Noticia</a> </td>
+                                <td> <a href="modificarN/{{n.idNoticia}}">Modificar Noticia</a> </td>
+                            </tr>
+                        </table>
+                    </div>
+
                 {% endfor %}
-            </table>
+            </div>
 
             <div class="contaniner">
                 <div style="text-align: center;">
