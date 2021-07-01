@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %} <!-- BUSCA LA CARPETA STATIC PARA LUEGO TRAER LA IMAGEN -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container"> 
+        <div class="row">
+            <div class="row">
+                <div class="col-4">
+                    <h1>Iniciar Sesión</h1>
+                    <form action="validarUsuario" method="POST">
+                        {% csrf_token %}<!-- SE AGREGA EN TODOS LOS FORMULARIOS -->
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group" style="text-align: center;">
+                            <input type="submit" value="Guardar" class="btn btn-primary btn-lg active">
+                            <input type="reset" value="Limpiar" class="btn btn-primary btn-lg active">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    
+</body>
+</html>

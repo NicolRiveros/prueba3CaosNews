@@ -46,7 +46,7 @@
     </div>
 
     <div class="container">
-        <h1>Modificar Noticia</h1>
+        <h1 style="text-align: center;">Modificar Noticia {{ nombre }} </h1>
         <form method="POST" action="/guardarN" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">

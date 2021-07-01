@@ -13,16 +13,26 @@ def principal(request):
     return render(request, 'Principal.html')
 
 def verNoticias(request):
+    nombre='Nicol Riveros'
+    request.session['nombre']=nombre
+
     noticias=Noticia.objects.all()
     datos={'noticias': noticias}
 
     return render(request, 'verNoticias.html', datos)
 
-def formNoticia(request):
-    categoria=Categoria.objects.all()
-    contexto={'categorias': categoria}
-    return render(request, 'formNoticias.html', contexto)
 
+def formNoticia(request):
+    if request.session.get('nombre'):
+        request.session.get('nombre')
+        nombre=request.session['nombre']
+
+        categoria=Categoria.objects.all()
+        contexto={'categorias': categoria, 'nombre': nombre}
+        return render(request, 'formNoticias.html', contexto)
+        return HttpResponse('No existe la sesion')
+    else:
+        return HttpResponse('No existe la sesion')
 
 def guardarNoticia(request):
     try:
@@ -54,7 +64,14 @@ def guardarNoticia(request):
         return HttpResponse(e)
 
 def formCategoria(request):
-    return render(request, 'formCategoria.html')
+    if request.session.get('nombre'):
+        request.session.get('nombre')
+        nombre=request.session['nombre']
+
+        datos={'nombre':nombre}
+        return render(request, 'formCategoria.html',datos)
+    else:
+        return HttpResponse('No existe la sesion')
 
 def guardarCategoria(request):
     v_idCategoria=request.POST.get('idCategoria')
@@ -79,10 +96,17 @@ def eliminarNoticia(request, v_idNoticia):
     #return HttpResponse('Id del producto: ' + str(v_idNoticia))
 
 def modificarNoticia(request, v_idNoticia):
-    noticia=Noticia.objects.get(idNoticia=v_idNoticia)
-    categoria=Categoria.objects.all()
-    context={'datos': noticia, 'categorias': categoria}
-    return render(request, 'formModificar.html', context)
+    if request.session.get('nombre'):
+        request.session.get('nombre')
+        nombre=request.session['nombre']
+        
+        
+        noticia=Noticia.objects.get(idNoticia=v_idNoticia)
+        categoria=Categoria.objects.all()
+        context={'datos': noticia, 'categorias': categoria, 'nombre': nombre}
+        return render(request, 'formModificar.html', context)
+    else:
+        return HttpResponse('No existe la sesion')
 
 def guardarModificarNoticia(request):
     try:
