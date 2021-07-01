@@ -3,24 +3,36 @@ from principal.models import Noticia
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 
-from .models import Noticia
+from .models import Noticia, Usuario
 from .models import Categoria
 from django.core.files.storage import FileSystemStorage #PERMITE ACCEDER AL SISTEMA DE ARCHIVOS
 
 # Create your views here.
+def login(request):
+    return render(request, 'login.html')
 
 def principal(request):
     return render(request, 'Principal.html')
 
 def verNoticias(request):
-    nombre='Nicol Riveros'
-    request.session['nombre']=nombre
-
     noticias=Noticia.objects.all()
     datos={'noticias': noticias}
 
     return render(request, 'verNoticias.html', datos)
 
+def validarUsuario(request):
+    try:
+        v_email=request.POST.get('email')
+        v_password=request.POST.get('password')
+        usuario=Usuario.objects.get(password=v_password, email=v_email)
+        if usuario:
+            #crear la sesion y redireccionar
+            request.session['nombre']=usuario.nombre #SI ENCUENTRA LOS DATOS DEL USUARIO, LO REDIRECCIONA A PRINCIPAL
+            return redirect('/principal')
+        else:
+            return redirect('/')
+    except:
+        return redirect('/')
 
 def formNoticia(request):
     if request.session.get('nombre'):
@@ -30,9 +42,8 @@ def formNoticia(request):
         categoria=Categoria.objects.all()
         contexto={'categorias': categoria, 'nombre': nombre}
         return render(request, 'formNoticias.html', contexto)
-        return HttpResponse('No existe la sesion')
     else:
-        return HttpResponse('No existe la sesion')
+        return redirect('/')
 
 def guardarNoticia(request):
     try:
@@ -65,13 +76,12 @@ def guardarNoticia(request):
 
 def formCategoria(request):
     if request.session.get('nombre'):
-        request.session.get('nombre')
         nombre=request.session['nombre']
 
         datos={'nombre':nombre}
         return render(request, 'formCategoria.html',datos)
     else:
-        return HttpResponse('No existe la sesion')
+        return redirect('/')
 
 def guardarCategoria(request):
     v_idCategoria=request.POST.get('idCategoria')
@@ -96,17 +106,11 @@ def eliminarNoticia(request, v_idNoticia):
     #return HttpResponse('Id del producto: ' + str(v_idNoticia))
 
 def modificarNoticia(request, v_idNoticia):
-    if request.session.get('nombre'):
-        request.session.get('nombre')
-        nombre=request.session['nombre']
-        
-        
-        noticia=Noticia.objects.get(idNoticia=v_idNoticia)
-        categoria=Categoria.objects.all()
-        context={'datos': noticia, 'categorias': categoria, 'nombre': nombre}
-        return render(request, 'formModificar.html', context)
-    else:
-        return HttpResponse('No existe la sesion')
+    noticia=Noticia.objects.get(idNoticia=v_idNoticia)
+    categoria=Categoria.objects.all()
+    context={'datos': noticia, 'categorias': categoria,}
+    return render(request, 'formModificar.html', context)
+
 
 def guardarModificarNoticia(request):
     try:
