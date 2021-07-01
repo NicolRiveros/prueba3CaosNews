@@ -50,7 +50,6 @@
             <a href="InicioSesion.html"><button type="button" class="btn btn-light">Iniciar sesión</button></a>
         </div>
     </nav>
-
     <div class="container mt-3">
         <div class="container">
             <div class="row">
@@ -63,7 +62,6 @@
                 <span id="longitud"></span>
                 <span id="latitud"></span>
             </div>
-            
             <div class="container" >
                 <div class="row" style="text-align: center;">
                     <table class="table" id="tabla1" bordercolor="#000000" style="background-color: #dddddd;">
@@ -79,7 +77,6 @@
                     </table>
                 </div>
             </div> 
-
           </div>
           
           
@@ -145,15 +142,18 @@
         
     </div>
     <p> </p>
-  
+    <div class="container">
+        <a href="formulario" class="btn btn-primary">Nueva Noticia</a>
+    </div>
     <h1 class="text-center"> Noticias </h1>
     <p> </p>
     <div class="container">
+
         <div class="row">
             <div class="col-sm-4">
                 <a href="GreysAnatomy.html">
                     <h3>Serie: Grey's Anatomy</h3>
-                    <img src="imagen/GreysAnatomySe.jpg" class="rounded" width="90%">
+                    <img src="{% static 'media/GreysAnatomy4.jpg' %}" class="rounded" width="90%">
                 </a>
                 <p>
                     Descubre todos los detalles de la serie que la esta rompiendo.
