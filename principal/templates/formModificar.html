@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Modificar Noticia</h1>
-        <form method="POST" action="/guardarN">
+        <form method="POST" action="/guardarN" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 <label for="idNoticia">ID Noticia</label>
@@ -44,6 +44,11 @@
                         {% endif %}
                     {% endfor %}
                 </select>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <input type="file" name="imagen" id="imagen" class="form-control">
             </div>
 
             <div class="form-group">

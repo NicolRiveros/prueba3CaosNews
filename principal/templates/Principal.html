@@ -26,19 +26,19 @@
                     <a class="nav-link" href="Principal.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Deportes</a>
+                    <a class="nav-link" href="noticias">Deportes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Entretenimiento</a>
+                    <a class="nav-link" href="noticias">Entretenimiento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Salud</a>
+                    <a class="nav-link" href="noticias">Salud</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Redes Sociales</a>
+                    <a class="nav-link" href="noticias">Redes Sociales</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contacto</a>
+                    <a class="nav-link" href="noticias">Contacto</a>
                 </li>
             </ul>
 
@@ -93,7 +93,7 @@
           <!-- Imagenes -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-                <a href="GreysAnatomy.html">
+                <a href="noticias">
                     <img src="{% static 'img/greys.jpg' %}" alt="Greys Anatomy" width="1100" height="500">
                 </a>
                 <div class="carousel-caption">
@@ -103,7 +103,7 @@
             </div>
 
             <div class="carousel-item">
-              <a href="futbol.html">
+              <a href="noticias">
                 <img src="{% static 'img/real.jpg' %}" alt="Grammy" width="1100" height="500">
               </a>
               <div class="carousel-caption">
@@ -112,7 +112,7 @@
               </div>
             </div>
             <div class="carousel-item">
-              <a href="Peliculas.html">
+              <a href="noticias">
                 <img src="{% static 'img/EntradaPelicula.png' %}" alt="Marvel y Terror" width="1100" height="500">
               </a>
               <div class="carousel-caption">
@@ -121,7 +121,7 @@
               </div>   
             </div>
             <div class="carousel-item">
-                <a href="corona.html">
+                <a href="noticias">
                   <img src="{% static 'img/redes1.jpg' %}" alt="Grammy" width="1100" height="500">
                 </a>
                 <div class="carousel-caption">
@@ -144,6 +144,7 @@
     <p> </p>
     <div class="container">
         <a href="formulario" class="btn btn-primary">Nueva Noticia</a>
+        <a href="noticias" class="btn btn-primary">Noticia</a>
     </div>
     <h1 class="text-center"> Noticias </h1>
     <p> </p>
@@ -151,9 +152,9 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <a href="GreysAnatomy.html">
+                <a href="noticias">
                     <h3>Serie: Grey's Anatomy</h3>
-                    <img src="{% static 'media/GreysAnatomy4.jpg' %}" class="rounded" width="90%">
+                    <img src="media/greys.jpg" alt="" class="rounded" width="90%">
                 </a>
                 <p>
                     Descubre todos los detalles de la serie que la esta rompiendo.
@@ -161,9 +162,9 @@
         </div>
 
         <div class="col-sm-4">
-            <a href="privacidad.html">
+            <a href="noticias">
               <h3>Que subes a redes sociales</h3>
-              <img src="img/tendencias-redes-sociales-2021-1280x720.jpg" class="rounded" width="100%">
+              <img src="media/tendencias-redes-sociales-2021-1280x720.jpg" class="rounded" width="100%">
             </a>
             <p>
                 Una problemática que será abordada a continuación por el profesional 
@@ -173,9 +174,9 @@
         </div>
 
         <div class="col-sm-4">
-            <a href="Musica.html">
+            <a href="noticias">
               <h3>Grammy 2021</h3>
-              <img src="imagen/DuaLipa.jpg" class="rounded" width="90%">
+              <img src="media/Grammy.jpg" class="rounded" width="90%">
             </a>
             <p>
                 Estos son los ganadores que hicieron historia en los 
@@ -184,16 +185,16 @@
         </div>
 
         <div>
-            <a href="Peliculas.html">
+            <a href="noticias">
                 <h2 class="text-center">Conoce las mejores peliculas de Terror.</h2>
-                <img src="imagen/TerrorEntrada.jpg"  class="mx-auto d-block" width="1100" alt="">
+                <img src="media/terrorEntrada.jpg"  class="mx-auto d-block" width="1100" alt="">
             </a>
         </div>
 
         <div class="col-sm-4">
-            <a href="camila.html">
+            <a href="noticias">
               <h3>Camila Gallardo</h3>
-              <img src="Img/camila.jpg" class="rounded" width="90%">
+              <img src="media/camila.jpg" class="rounded" width="90%">
             </a>
             <p>
                 Otra vez en el blanco de las críticas: 
@@ -203,7 +204,7 @@
         </div>
 
         <div class="col-sm-4">
-            <a href="mountain.html">
+            <a href="noticias">
               <h3>Mountain Bike</h3>
               <img src="Img/mountain-biking-95032_1280.jpg" class="rounded" width="90%">
             </a>
@@ -216,9 +217,9 @@
         </div>
 
         <div class="col-sm-4">
-            <a href="Coronavirus.html">
+            <a href="noticias">
               <h3>Coronavirus</h3>
-              <img src="imagen/EnfeCoronavirus.jpg" class="rounded" width="90%">
+              <img src="media/EntradaCoronavirus.jpg" class="rounded" width="90%">
             </a>
             <p>
                 Ultimas Informaciones sobre el Coronavirus en Chile.
@@ -226,9 +227,9 @@
         </div>
 
         <div class="col-sm-4">
-            <a href="AlcoholDrogas.html">
+            <a href="noticias">
               <h3>Consumo alcohol y drogas</h3>
-              <img src="imagen/AlcoholEntrada.png" class="rounded" width="90%">
+              <img src="media/AlcoholEntrada.png" class="rounded" width="90%">
             </a>
             <p>
                 Impacto por el consumo de estas sustancias y como afecta en las salud.
@@ -236,9 +237,9 @@
         </div>
         
         <div class="col-sm-4">
-            <a href="esqui.html">
+            <a href="noticias">
               <h3>Esqui</h3>
-              <img src="Img/esqui3.jpg" class="rounded" width="90%">
+              <img src="media/esqui3.jpg" class="rounded" width="90%">
             </a>
             <p>
                 El esquí es un deporte de montaña que consiste en
@@ -249,9 +250,9 @@
         </div>
 
         <div class="col-sm-4">
-            <a href="Mental.html">
+            <a href="noticias">
               <h3>Cuida tu Salud Mental</h3>
-              <img src="imagen/SaludMental.jpg" class="rounded" width="90%">
+              <img src="media/AnimadoSalud.jpg" class="rounded" width="90%">
             </a>
             <p>
                 Recomendaciones para mantener una buena salud mental.

@@ -89,6 +89,10 @@ def guardarModificarNoticia(request):
         v_descripcion=request.POST.get('descripcion')
         v_categoria=request.POST.get('categoria')
 
+        v_imagen=request.FILES.get('imagen')
+        fs = FileSystemStorage()
+        file = fs.save(v_imagen.name, v_imagen)
+
         categoria=Categoria.objects.get(idCategoria=v_categoria)
         noticia=Noticia.objects.get(idNoticia=v_idNoticia)
 
@@ -96,6 +100,7 @@ def guardarModificarNoticia(request):
         noticia.encabexado=v_encabezado
         noticia.descripcion=v_descripcion
         noticia.categoria=categoria
+        noticia.imagen=file
 
         Noticia.save(noticia)
         return redirect('/noticias')
