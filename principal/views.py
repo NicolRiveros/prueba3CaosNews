@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 from .models import Noticia
 from .models import Categoria
+from django.core.files.storage import FileSystemStorage #PERMITE ACCEDER AL SISTEMA DE ARCHIVOS
 # Create your views here.
 
 def principal(request):
@@ -36,6 +37,7 @@ def guardarNoticia(request):
     nuevo.idNoticia=v_idNoticia
     nuevo.encabezado=v_encabezado
     nuevo.descripcion=v_descripcion
+
     nuevo.categoria=categoria
 
     Noticia.save(nuevo)
@@ -58,3 +60,37 @@ def guardarCategoria(request):
 
     context={'categoria': categoria}
     return HttpResponse('Categoria Agregada:' + v_nombreCategoria)
+
+def eliminarNoticia(request, v_idNoticia):
+    noticia=Noticia.objects.get(idNoticia=v_idNoticia)
+
+    Noticia.delete(noticia)
+    return redirect('/noticias')
+    #return HttpResponse('Id del producto: ' + str(v_idNoticia))
+
+def modificarNoticia(request, v_idNoticia):
+    noticia=Noticia.objects.get(idNoticia=v_idNoticia)
+    categoria=Categoria.objects.all()
+    context={'datos': noticia, 'categorias': categoria}
+    return render(request, 'formModificar.html', context)
+
+def guardarModificarNoticia(request):
+    try:
+        v_titulo=request.POST.get('titulo')
+        v_idNoticia=request.POST.get('idNoticia')
+        v_encabezado=request.POST.get('encabezado')
+        v_descripcion=request.POST.get('descripcion')
+        v_categoria=request.POST.get('categoria')
+
+        categoria=Categoria.objects.get(idCategoria=v_categoria)
+        noticia=Noticia.objects.get(idNoticia=v_idNoticia)
+
+        noticia.titulo=v_titulo
+        noticia.encabexado=v_encabezado
+        noticia.descripcion=v_descripcion
+        noticia.categoria=categoria
+
+        Noticia.save(noticia)
+        return redirect('/noticias')
+    except Exception as e:
+        return HttpResponse(e)

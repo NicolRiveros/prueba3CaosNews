@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid black;
+        }
+        
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    
+    </style>
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +33,15 @@
 <body>
     <div class="container"> 
         <div class="row">
-            <table class="table">
+            <table class="table" style="text-align: center;">
                 <tr>
-                    <td> <b>Id Noticia</b> </td>
-                    <td> <b>Titulo</b> </td>
-                    <td> <b>Encabezado</b> </td>
-                    <td> <b>Contenido</b> </td>
-                    <td> <b>Categoria</b> </td>
+                    <th> <b>Id Noticia</b> </th>
+                    <th> <b>Titulo</b> </th>
+                    <th> <b>Encabezado</b> </th>
+                    <th> <b>Contenido</b> </th>
+                    <th> <b>Categoria</b> </th>
+                    <th> <b>Imagen</b> </th>
+                    <th colspan="2"> <b>Acciones</b> </th>
                 </tr>
                 {% for n in noticias %}<!-- ITERA LAS NOTICIAS -->
                     <tr>
@@ -27,9 +50,14 @@
                         <td>{{n.encabezado}}</td>
                         <td>{{n.descripcion}}</td>
                         <td>{{n.categoria_id}}</td>
+                        <td> <a href="eliminarN/{{n.idNoticia}}">Eliminar</a> </td>
+                        <td> <a href="modificarN/{{n.idNoticia}}">Modificar</a> </td>
                     </tr>
                 {% endfor %}
-             </table>
+            </table>
+            <div class="col-2">
+                <a href="formulario" class="btn btn-primary">Nuevo</a>
+            </div>
         </div>
     </div>
         

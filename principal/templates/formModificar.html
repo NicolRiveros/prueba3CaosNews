@@ -10,43 +10,41 @@
 </head>
 <body>
     <div class="container">
-        <h1>Ingresar Noticia</h1>
-        <form method="POST" action="guardarNoticia" enctype="multipart/form-data">
+        <h1>Modificar Noticia</h1>
+        <form method="POST" action="/guardarN">
             {% csrf_token %}
             <div class="form-group">
                 <label for="idNoticia">ID Noticia</label>
-                <input type="number" name="idNoticia" id="idNoticia" class="form-control">
+                <input type="number" name="idNoticia" id="idNoticia" class="form-control" value='{{datos.idNoticia}}' readonly='true'>
             </div>
 
             <div class="form-group">
                 <label for="titulo">Titulo</label>
-                <input type="text" name="titulo" id="titulo" class="form-control">
+                <input type="text" name="titulo" id="titulo" class="form-control" value='{{datos.titulo}}'>
             </div>
 
             <div class="form-group">
                 <label for="encabezado">Encabezado</label>
-                <input type="text" name="encabezado" id="encabezado" class="form-control">
+                <input type="text" name="encabezado" id="encabezado" class="form-control" value='{{datos.encabezado}}'>
             </div>
 
             <div class="form-group">
                 <label for="descripcion">Contenido</label>
-                <textarea placeholder="Contenido" name="descripcion" id="descripcion" class="form-control"></textarea>
+                <textarea placeholder="Contenido" name="descripcion" id="descripcion" class="form-control" value='{{datos.descripcion}}'></textarea>
             </div>
 
             <div class="form-group">
                 <label for="categoria">Categoria</label>
-                <select name="categoria" id="categoria" class="form-control">
+                <select name="categoria" id=categoria class="form-control">
                     {% for cat in categorias %}<!-- ITERA LAS CATEGORIAS Y LAS DESPLIEGA -->
-                        <option value="{{cat.idCategoria}}">{{cat.nombreCategoria}}</option>
+                        {% if cat.idCategoria == datos.categoria.idCategoria %}
+                            <option value={{cat.idCategoria}} selected="true">{{cat.nombreCategoria}}</option>
+                        {% else %}
+                            <option value={{cat.idCategoria}}>{{cat.nombreCategoria}}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
             </div>
-
-            <div class="form-group">
-                <label for="imagen">Imagen</label>
-                <input type="file" name="imagen" id="imagen" class="form-control">
-            </div>
-
 
             <div class="form-group">
                 <input type="submit" value="Guardar">
