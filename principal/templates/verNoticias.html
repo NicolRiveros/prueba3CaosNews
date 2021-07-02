@@ -20,7 +20,7 @@
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Inicio</a>
+                    <a class="nav-link" href="/principal">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="noticias">Deportes</a>
@@ -53,11 +53,13 @@
                 {% for n in noticias %}
                     <h2> {{n.titulo}} </h2>
                     <h4> {{n.encabezado}}</h4>
-                    <h5 style="text-align: right;">ID Noticia: {{n.idNoticia}}</h5>
+                    <h5 style="text-align: right;">ID Noticia: {{n.idNoticia}}</h5>        
                     <p>
                         {{n.descripcion}}
                     </p>
                     <img src="media/{{ n.imagen }}" class="mx-auto d-block"  height="400">
+                    <h5>Categoria: {{n.categoria.nombreCategoria}}</h5>
+
                     <div class="row">
                         <table class="table">
                             <tr>
