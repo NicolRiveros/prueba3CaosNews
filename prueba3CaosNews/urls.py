@@ -15,7 +15,7 @@ Including another URLconf
 """
 from principal.views import eliminarNoticia, formCategoria, formNoticia, guardarCategoria, guardarModificarNoticia, guardarNoticia, login, modificarNoticia, principal, validarUsuario, verNoticias
 from django.contrib import admin
-from django.urls import path
+from django.urls import path , include
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -33,7 +33,9 @@ urlpatterns = [
     path('eliminarN/<int:v_idNoticia>', eliminarNoticia),
     path('modificarN/<int:v_idNoticia>', modificarNoticia),
     path('guardarN', guardarModificarNoticia),
-    path('validarUsuario', validarUsuario)
+    path('validarUsuario', validarUsuario),
+
+    path('api/V1.0/',include('principal.urls')),
 ]
 
 if settings.DEBUG:
