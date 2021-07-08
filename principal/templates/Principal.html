@@ -47,7 +47,7 @@
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
             </form> 
 
-            <a href="InicioSesion.html"><button type="button" class="btn btn-light">Iniciar sesión</button></a>
+            <a href=""><button type="button" class="btn btn-light">Iniciar sesión</button></a>
         </div>
     </nav>
     <div class="container mt-3">
@@ -144,12 +144,76 @@
     <p> </p>
     <div class="container">
         <div style="text-align: center;">
-            <a href="noticias" class="btn btn-primary btn-lg active">Noticia</a>
-            <a href="formulario" class="btn btn-primary btn-lg active">Nueva Noticia</a>
-            <a href="formularioCat" class="btn btn-primary btn-lg active">Ingresar Categoria Noticia</a>
+            <a href="noticias" class="btn btn-info btn-lg active">Noticia</a>
+            <a href="formulario" class="btn btn-info btn-lg active">Nueva Noticia</a>
+            <a href="formularioCat" class="btn btn-info btn-lg active">Ingresar Categoria Noticia</a>
         </div>
         
     </div>
+    <p></p>
+    <div class="container">
+        <div class="mb-3" style="text-align: center;">
+            <h1>Consumo servicio</h1>
+        </div>
+        <div class="mb-3">
+            <button id="Llamar" class="btn btn-info" >LLamar Categoria</button>
+        </div>
+        <div class="row">
+            <table class="table" id="tablaServicio">
+                <thead>
+                    <tr>
+                        <th>Id Categoria</th>
+                        <th>Nombre Categoria</th>
+                    </tr>
+                </thead>
+                <body>
+                    <!-- Contenido se crea dinamicamente-->
+                </body>
+            </table>
+        </div>
+    </div>
+    <p></p>
+    <div class="container">
+        <div class="mb-3">
+            <button id="Llamar2" class="btn btn-info" >LLamar Noticia</button>
+        </div>
+        <div class="row">
+            <table class="table" id="tablaNoticia">
+                <thead>
+                    <tr>
+                        <th>Id Noticia</th>
+                        <th>Titulo</th>
+                        <th>Encabezado</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <body>
+                    <!-- Contenido se crea dinamicamente-->
+                </body>
+            </table>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="container">
+        <div class="mb-3">
+            <button id="Llamar3" class="btn btn-info" >Usuario</button>
+        </div>
+        <div class="row">
+            <table class="table" id="tablaUsuario">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <body>
+                    <!-- Contenido se crea dinamicamente-->
+                </body>
+            </table>
+        </div>
+    </div>
+    
     <h1 class="text-center"> Noticias </h1>
     <p> </p>
     <div class="container">
@@ -186,13 +250,6 @@
                 Estos son los ganadores que hicieron historia en los 
                 premios Grammy Awards 2021 en su 63ª entrega.
             </p>
-        </div>
-
-        <div>
-            <a href="noticias">
-                <h2 class="text-center">Conoce las mejores peliculas de Terror.</h2>
-                <img src="media/terrorEntrada.jpg"  class="mx-auto d-block" width="1100" alt="">
-            </a>
         </div>
 
         <div class="col-sm-4">
@@ -286,7 +343,7 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    <!-- Contenido se crea dinamicamente-->
                 </tbody>
             </table>
         </div>
@@ -295,29 +352,29 @@
 
     <div class="container mt-5">
         <div class="text-center mb-3">
+            <div class="row g-2">
+                <div class="col-md-4">
+                    <div class="card"> <img src="https://i.imgur.com/xuGJbnU.png" width="40">
+                        <h5>Atención</h5>
+                        <p>Lunes a Sabados de 09:00 a 22:00 hrs</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"> <img src="https://i.imgur.com/TNKflal.png" width="40">
+                        <h5>Email</h5>
+                        <p>hotelVeranum_contacto@mail.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card"> <img src="https://i.imgur.com/pZLFSO3.png" width="40">
+                        <h5>Comunicate con nosotros</h5>
+                        <p>9-12345678</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row g-2">
-            <div class="col-md-4">
-                <div class="card"> <img src="https://i.imgur.com/xuGJbnU.png" width="40">
-                    <h5>Atención</h5>
-                    <p>Lunes a Sabados de 09:00 a 22:00 hrs</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card"> <img src="https://i.imgur.com/TNKflal.png" width="40">
-                    <h5>Email</h5>
-                    <p>caosnews_contacto@mail.com</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card"> <img src="https://i.imgur.com/pZLFSO3.png" width="40">
-                    <h5>Comunicate con nosotros</h5>
-                    <p>9-12345678</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+   </div>
+
   </div>
 </body>
 
@@ -329,6 +386,58 @@
 
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#Llamar").click(function(){
+            $.get("http://127.0.0.1:8000/api/V1.0/Categoria/",
+            function(data){
+                $.each(data, function(i, item){
+                    $("#tablaServicio").append(
+                        "<tr>" +
+                            "<td>" + item.idCategoria + "</td>" +
+                            "<td>" + item.nombreCategoria + "</td>" +
+                        "</tr>"
+                    );
+                });
+            });
+        });
+    });
+
+    $(document).ready(function(){
+        $("#Llamar2").click(function(){
+            $.get("http://127.0.0.1:8000/api/V1.0/Noticia/",
+            function(data){
+                $.each(data, function(i, item){
+                    $("#tablaNoticia").append(
+                        "<tr>" +
+                            "<td>" + item.idNoticia + "</td>" +
+                            "<td>" + item.titulo + "</td>" +
+                            "<td>" + item.encabezado + "</td>" +
+                            "<td>" + item.descripcion + "</td>" +
+                        "</tr>"
+                    );
+                });
+            });
+        });
+    });
+
+    $(document).ready(function(){
+        $("#Llamar3").click(function(){
+            $.get("http://127.0.0.1:8000/api/V1.0/Usuario/",
+            function(data){
+                $.each(data, function(i, item){
+                    $("#tablaUsuario").append(
+                        "<tr>" +
+                            "<td>" + item.nombre + "</td>" +
+                            "<td>" + item.email + "</td>" +
+                        "</tr>"
+                    );
+                });
+            });
+        });
+    });
+</script>
 
 <script>
     $(document).ready(function(){
@@ -362,13 +471,12 @@
                 "</td><td>" + data.coord.lon + "</td><td>" + data.coord.lat +"</td></tr>");
             }); 
 }
-            ///https://assets.msn.com/bundles/v1/weather/latest/MostlySunnyDay.svg  SOL
-            //https://assets.msn.com/bundles/v1/weather/latest/SunnyDayV3.svg SOL Y NUBE
+
 </script>
 
 <script>
         $("#boton2").click(function(){
-            $.get("https://api.spaceflightnewsapi.net/v3/articles",
+           $.get("https://api.spaceflightnewsapi.net/v3/articles",
             function(data){
                 $.each(data, function(i,item){
                     $("#tablaNoticias").append(

@@ -54,22 +54,22 @@
                 <input type="number" name="idNoticia" id="idNoticia" class="form-control" placeholder="Ingrese ID" required>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="titulo">Titulo</label>
                 <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Ingrese titulo" required>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="encabezado">Encabezado</label>
                 <input type="text" name="encabezado" id="encabezado" class="form-control" placeholder="Ingrese encabezado">
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="descripcion">Contenido</label>
                 <textarea placeholder="Ingrese contenido.." name="descripcion" id="descripcion" class="form-control" rows="5" cols="20" required></textarea>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="categoria">Categoria</label>
                 <select name="categoria" id="categoria" class="form-control">
                     {% for cat in categorias %}<!-- ITERA LAS CATEGORIAS Y LAS DESPLIEGA -->
@@ -78,12 +78,12 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="mb-3">
                 <label for="imagen">Imagen</label>
                 <input type="file" name="imagen" id="imagen" class="form-control">
             </div>
 
-            <div class="form-group" style="text-align: center;">
+            <div class="mb-3" style="text-align: center;">
                 <input type="submit" value="Guardar" class="btn btn-primary btn-lg active">
                 <input type="reset" value="Limpiar" class="btn btn-primary btn-lg active">
             </div>
